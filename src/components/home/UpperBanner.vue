@@ -15,10 +15,10 @@
 .banner {
   .parent {
     margin-top: 138px;
-    height: calc(100vh - 203px);
+    height: calc(100vh - 138px);
     background-image: url("../../assets/images/banner-bg.jpg");
     background-size: cover;
-    background-position: -100px top;
+    background-position: -300px top;
     .content {
       color: white;
       padding: 100px 0 0 150px;

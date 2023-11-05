@@ -1,5 +1,5 @@
 <template>
-  <v-layout>
+  <v-layout class="position-relative">
     <cart-drawer />
     <app-nav-bar />
     <v-main>

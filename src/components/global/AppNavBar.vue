@@ -1,6 +1,6 @@
 <template>
   <div class="nav-bar">
-    <v-app-bar height="fit-content" color="#02218f">
+    <v-app-bar height="fit-content" color="#02218f" absolute>
       <v-container fluid>
         <v-row>
           <v-col cols="3">
@@ -123,13 +123,12 @@
         <v-row>
           <v-col cols="8">
             <ul class="links d-flex">
-              <li>Like</li>
-              <li>Like</li>
-              <li>Like</li>
-              <li>Like</li>
-              <li>Like</li>
-              <li>Like</li>
-              <li>Like</li>
+              <li>Theme Demo</li>
+              <li>Shop</li>
+              <li>Product</li>
+              <li>New In</li>
+              <li>Must Have</li>
+              <li>Collections</li>
             </ul>
           </v-col>
           <v-col cols="4" class="d-flex justify-end">
@@ -404,7 +403,7 @@ export default {
   .links {
     list-style: none;
     li {
-      margin-left: 10px;
+      margin-left: 20px;
     }
   }
   .v-col-4 {

@@ -4,9 +4,7 @@
       <div class="content">
         <h3><span>Huge Saving</span> on UHD Televisions</h3>
         <p class="hint">Sale up to 70% off on selected items</p>
-        <v-btn density="combact" class="shop-btn py-2 px-3" variant="outlined"
-          >Shop Now</v-btn
-        >
+        <v-btn class="shop-btn py-2 px-3" variant="outlined">Shop Now</v-btn>
       </div>
     </div>
   </div>
@@ -15,10 +13,11 @@
 .banner {
   .parent {
     margin-top: 138px;
+    width: 100%;
     height: calc(100vh - 138px);
     background-image: url("../../assets/images/banner-bg.jpg");
     background-size: cover;
-    background-position: -300px top;
+    background-position: top;
     .content {
       color: white;
       padding: 100px 0 0 150px;

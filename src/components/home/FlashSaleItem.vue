@@ -2,11 +2,17 @@
   <div class="product-card">
     <span class="sale" v-if="true">Sale</span>
     <v-card elevation="0">
-      <img
-        :src="product.images[0]"
-        :alt="product.description"
-        class="card-image"
-      />
+      <v-hover v-slot="{ isHovering, props }">
+        <div class="image-parent">
+          <img
+            :src="product.images[0]"
+            :alt="product.description"
+            class="card-image"
+            :style="`scale: ${isHovering ? 1.1 : 1}`"
+            v-bind="props"
+          />
+        </div>
+      </v-hover>
       <v-card-text class="description pl-0 pb-0 pt-0">{{
         product.description
       }}</v-card-text>
@@ -114,7 +120,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .product-card {
   position: relative;
   overflow: hidden;
@@ -128,12 +134,19 @@ export default {
     padding: 0 10px;
     z-index: 1;
   }
-  .card-image {
-    width: 80%;
+  .image-parent {
     height: 120px;
+    width: 100%;
+    overflow: hidden;
+    .card-image {
+      width: 100%;
+      height: 120px;
+      transition: 0.5s all ease-in-out;
+      cursor: pointer;
+    }
   }
   .description {
-    width: 100%;
+    width: 95%;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

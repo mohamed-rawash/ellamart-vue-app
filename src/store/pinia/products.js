@@ -12,7 +12,7 @@ export const productsModule = defineStore("productsModule", {
         .get("https://dummyjson.com/products")
         .then((res) => {
           this.products = res.data.products;
-          this.flashSale = this.products.slice(0, 6);
+          this.flashSale = this.products.slice(7, 20);
           console.log(this.flashSale);
         })
         .catch((err) => console.log(err));

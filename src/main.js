@@ -4,6 +4,10 @@ import router from "./router";
 import store from "./store";
 import { createPinia } from "pinia";
 
+// swiper config
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 // Emitter Config
 import mitt from "mitt";
 const emitter = mitt();

@@ -4,10 +4,12 @@
     <features-list />
     <top-offers />
     <flash-sale-section :products="flashSale" />
+    <top-categories />
   </div>
 </template>
 
 <script>
+import TopCategories from "@/components/home/TopCategories.vue";
 import UpperBanner from "@/components/home/UpperBanner";
 import FeaturesList from "@/components/home/FeaturesList";
 import TopOffers from "@/components/home/TopOffers";
@@ -21,6 +23,7 @@ export default {
     FeaturesList,
     TopOffers,
     FlashSaleSection,
+    TopCategories,
   },
   computed: {
     ...mapState(productsModule, ["flashSale"]),

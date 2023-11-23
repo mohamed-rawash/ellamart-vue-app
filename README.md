@@ -18,6 +18,7 @@
 - Added top categories section ✅
 ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/043c52f0-7c0e-4f21-9370-01b5e6b8df5f)
 
-
+- Added new products Section ✅
+![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/e4199ca9-12d2-43f8-ba85-e9d42b1dd20a)
 
 

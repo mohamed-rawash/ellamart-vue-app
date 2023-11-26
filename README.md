@@ -21,4 +21,8 @@
 - Added new products Section ✅
 ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/e4199ca9-12d2-43f8-ba85-e9d42b1dd20a)
 
+- 🟩 Added quality features section ✅
+  ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/65137acc-6bd0-49a1-be8f-822fb462c574)
+  ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/e428466f-1960-494c-9c34-7a0b57234b5e)
+
 

@@ -29,7 +29,7 @@ export default {
   components: { SwiperLayout },
 };
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .new-products {
   .banner {
     width: 100%;

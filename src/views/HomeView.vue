@@ -5,11 +5,13 @@
     <top-offers />
     <flash-sale-section :products="flashSale" />
     <top-categories />
-    <new-products :products="flashSale" />
+    <new-products :products="laptops" />
+    <quality-feature />
   </div>
 </template>
 
 <script>
+import QualityFeature from "@/components/home/QualityFeature.vue";
 import NewProducts from "@/components/home/NewProducts.vue";
 import TopCategories from "@/components/home/TopCategories.vue";
 import UpperBanner from "@/components/home/UpperBanner";
@@ -27,9 +29,10 @@ export default {
     FlashSaleSection,
     TopCategories,
     NewProducts,
+    QualityFeature,
   },
   computed: {
-    ...mapState(productsModule, ["flashSale"]),
+    ...mapState(productsModule, ["flashSale", "laptops"]),
   },
   methods: {
     ...mapActions(productsModule, ["getProducts"]),

@@ -3,7 +3,8 @@
     :pagination="{ el: '.swiper-pagination', clickable: true }"
     :modules="modules"
     :breakpoints="{
-      600: { slidesPerView: 1 },
+      300: { slidesPerView: 1 },
+      600: { slidesPerView: 2 },
       900: { slidesPerView: 3 },
       1200: { slidesPerView: 4 },
     }"

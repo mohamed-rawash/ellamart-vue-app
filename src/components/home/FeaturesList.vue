@@ -86,6 +86,7 @@
       display: inline-block;
       width: 34px;
       height: 30px;
+      font-size: 0.7rem;
       margin-right: 16px;
     }
     .label {

@@ -7,10 +7,14 @@
     <top-categories />
     <new-products :products="laptops" />
     <quality-feature />
+    <top-mobile-phones />
+    <top-fragrances />
   </div>
 </template>
 
 <script>
+import TopFragrances from "@/components/home/TopFragrances.vue";
+import TopMobilePhones from "@/components/home/TopMobilePhones.vue";
 import QualityFeature from "@/components/home/QualityFeature.vue";
 import NewProducts from "@/components/home/NewProducts.vue";
 import TopCategories from "@/components/home/TopCategories.vue";
@@ -30,6 +34,8 @@ export default {
     TopCategories,
     NewProducts,
     QualityFeature,
+    TopMobilePhones,
+    TopFragrances,
   },
   computed: {
     ...mapState(productsModule, ["flashSale", "laptops"]),

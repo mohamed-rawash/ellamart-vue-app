@@ -6,6 +6,8 @@ export const productsModule = defineStore("productsModule", {
     products: [],
     flashSale: [],
     laptops: [],
+    phones: [],
+    fragrances: [],
   }),
   actions: {
     async getProducts() {
@@ -16,6 +18,12 @@ export const productsModule = defineStore("productsModule", {
           this.flashSale = this.products.slice(7, 20);
           this.laptops = this.products.filter(
             (el) => el.category === "laptops"
+          );
+          this.phones = this.products.filter(
+            (el) => el.category === "smartphones"
+          );
+          this.fragrances = this.products.filter(
+            (el) => el.category === "fragrances"
           );
           console.log(this.flashSale);
         })

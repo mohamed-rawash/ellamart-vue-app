@@ -124,7 +124,7 @@ export default {
 .product-card {
   position: relative;
   overflow: hidden;
-
+  width: 200px;
   .sale {
     position: absolute;
     left: 0;
@@ -135,7 +135,6 @@ export default {
     z-index: 1;
   }
   .image-parent {
-    height: 120px;
     width: 100%;
     overflow: hidden;
     .card-image {

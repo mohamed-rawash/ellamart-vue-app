@@ -4,9 +4,9 @@
     :modules="modules"
     :breakpoints="{
       300: { slidesPerView: 1 },
-      600: { slidesPerView: 2 },
-      900: { slidesPerView: 3 },
-      1200: { slidesPerView: 4 },
+      600: { slidesPerView: 3 },
+      900: { slidesPerView: 4 },
+      1200: { slidesPerView: 5 },
     }"
     :space-between="35"
     :autoplay="{ delay: 3000 }"

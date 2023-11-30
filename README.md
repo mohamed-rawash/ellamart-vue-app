@@ -25,4 +25,12 @@
   ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/65137acc-6bd0-49a1-be8f-822fb462c574)
   ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/e428466f-1960-494c-9c34-7a0b57234b5e)
 
+-Added top mobile section successfully ✅
+![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/d5866367-7ee3-4d62-8881-5f6a8d8bf73e)
+
+-Added new banner section successfully ✅
+![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/2d347799-1bab-4bd5-b3db-cac417dbcf1a)
+
+-Added top fragrancessection successfully ✅
+![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/89bf368c-9009-4004-aa2b-b6c34e0be0f6)
 

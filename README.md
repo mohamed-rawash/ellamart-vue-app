@@ -27,6 +27,8 @@
 
 -Added top mobile section successfully ✅
 ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/d5866367-7ee3-4d62-8881-5f6a8d8bf73e)
+- Added why shop with us section ✅
+  ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/1aa6ff96-dc60-4277-a0c0-b07f8f6a433a)
 
 -Added new banner section successfully ✅
 ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/2d347799-1bab-4bd5-b3db-cac417dbcf1a)

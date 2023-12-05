@@ -36,3 +36,6 @@
 -Added top fragrancessection successfully ✅
 ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/89bf368c-9009-4004-aa2b-b6c34e0be0f6)
 
+- Added products loader **successfully** ✅✅
+  ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/7e305d6f-5d47-474c-8029-dd8e1d8a8bb4)
+

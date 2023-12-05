@@ -7,7 +7,14 @@
     <v-container fluid>
       <v-row>
         <v-col md="12" lg="9">
-          <SwiperLayout :products="products" />
+          <v-container fluid v-if="products.length === 0">
+            <v-row>
+              <v-col v-for="i in 5" :key="i">
+                <VSkeletonLoader type="image, article"></VSkeletonLoader>
+              </v-col>
+            </v-row>
+          </v-container>
+          <SwiperLayout v-else :products="products" />
         </v-col>
         <v-col md="12" lg="3">
           <div class="banner"></div>
@@ -19,6 +26,7 @@
 
 <script>
 import SwiperLayout from "../global/SwiperLayout.vue";
+import { VSkeletonLoader } from "vuetify/lib/labs/components.mjs";
 
 export default {
   props: {
@@ -26,7 +34,7 @@ export default {
       type: Array,
     },
   },
-  components: { SwiperLayout },
+  components: { SwiperLayout, VSkeletonLoader },
 };
 </script>
 <style lang="scss" scoped>

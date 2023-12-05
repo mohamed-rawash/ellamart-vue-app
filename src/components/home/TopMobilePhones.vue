@@ -4,7 +4,14 @@
       <h2 class="text-red-darken-2">Top Mobile Phones</h2>
       <a href="#" class="text-black"> Shope All</a>
     </div>
-    <SwiperLayout :products="this.phones"></SwiperLayout>
+    <v-container fluid v-if="phones.length === 0">
+      <v-row>
+        <v-col v-for="i in 5" :key="i">
+          <VSkeletonLoader type="image, article"></VSkeletonLoader>
+        </v-col>
+      </v-row>
+    </v-container>
+    <SwiperLayout v-else :products="this.phones"></SwiperLayout>
   </div>
 </template>
 
@@ -12,9 +19,11 @@
 import { mapState } from "pinia";
 import SwiperLayout from "../global/SwiperLayout.vue";
 import { productsModule } from "@/store/pinia/products";
+import { VSkeletonLoader } from "vuetify/lib/labs/components.mjs";
 export default {
   components: {
     SwiperLayout,
+    VSkeletonLoader,
   },
   computed: {
     ...mapState(productsModule, ["phones"]),

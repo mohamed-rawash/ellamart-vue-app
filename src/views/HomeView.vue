@@ -9,10 +9,12 @@
     <quality-feature />
     <top-mobile-phones />
     <top-fragrances />
+    <why-shop-with-us />
   </div>
 </template>
 
 <script>
+import WhyShopWithUs from "../components/home/WhyShopWithUs.vue";
 import TopFragrances from "@/components/home/TopFragrances.vue";
 import TopMobilePhones from "@/components/home/TopMobilePhones.vue";
 import QualityFeature from "@/components/home/QualityFeature.vue";
@@ -36,6 +38,7 @@ export default {
     QualityFeature,
     TopMobilePhones,
     TopFragrances,
+    WhyShopWithUs,
   },
   computed: {
     ...mapState(productsModule, ["flashSale", "laptops"]),

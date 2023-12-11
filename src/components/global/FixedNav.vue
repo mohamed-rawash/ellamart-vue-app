@@ -10,12 +10,20 @@
           </v-col>
           <v-col cols="8">
             <ul class="links h-100 d-flex justify-center align-center">
-              <li>Theme Demo</li>
-              <li>Shop</li>
-              <li>Product</li>
-              <li>New In</li>
-              <li>Must Have</li>
-              <li>Collections</li>
+              <li v-for="category in categories" :key="category.title">
+                <router-link
+                  style="all: unset"
+                  :to="{
+                    name: 'products',
+                    params: {
+                      category: category.routeName,
+                      title: category.title,
+                    },
+                  }"
+                >
+                  {{ category.title }}
+                </router-link>
+              </li>
             </ul>
           </v-col>
           <v-col cols="2">
@@ -63,8 +71,13 @@
   </div>
 </template>
 <script>
+import { productsModule } from "../../store/pinia/products";
+import { mapState } from "pinia";
 export default {
   inject: ["emitter"],
+  computed: {
+    ...mapState(productsModule, ["categories"]),
+  },
   methods: {
     openCart() {
       console.log("emitter");

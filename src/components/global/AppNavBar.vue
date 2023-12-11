@@ -120,15 +120,23 @@
             </div>
           </v-col>
         </v-row>
-        <v-row>
+        <v-row class="d-flex justify-space-between">
           <v-col cols="8">
-            <ul class="links d-flex">
-              <li>Theme Demo</li>
-              <li>Shop</li>
-              <li>Product</li>
-              <li>New In</li>
-              <li>Must Have</li>
-              <li>Collections</li>
+            <ul class="links d-flex flex-wrap">
+              <li v-for="category in categories" :key="category.title">
+                <router-link
+                  style="all: unset"
+                  :to="{
+                    name: 'products',
+                    params: {
+                      category: category.routeName,
+                      title: category.title,
+                    },
+                  }"
+                >
+                  {{ category.title }}
+                </router-link>
+              </li>
             </ul>
           </v-col>
           <v-col cols="4" class="d-flex justify-end">
@@ -184,6 +192,8 @@
   </div>
 </template>
 <script>
+import { productsModule } from "@/store/pinia/products";
+import { mapState } from "pinia";
 export default {
   inject: ["emitter"],
   data: () => ({
@@ -358,6 +368,9 @@ export default {
       },
     ],
   }),
+  computed: {
+    ...mapState(productsModule, ["categories"]),
+  },
   methods: {
     openCart() {
       console.log("emitter");
@@ -404,6 +417,11 @@ export default {
     list-style: none;
     li {
       margin-left: 20px;
+      cursor: pointer;
+      transition: 0.3s all ease-in;
+      &:hover {
+        color: #ffb547;
+      }
     }
   }
   .v-col-4 {

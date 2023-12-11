@@ -124,7 +124,7 @@ export default {
 .product-card {
   position: relative;
   overflow: hidden;
-  width: 200px;
+  width: 300px;
   .sale {
     position: absolute;
     left: 0;

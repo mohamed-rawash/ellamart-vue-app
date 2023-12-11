@@ -12,7 +12,6 @@
 <style lang="scss" scoped>
 .banner {
   .parent {
-    margin-top: 138px;
     width: 100%;
     height: calc(100vh - 138px);
     background-image: url("../../assets/images/banner-bg.jpg");

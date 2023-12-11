@@ -3,7 +3,7 @@
     <cart-drawer />
     <app-nav-bar />
     <fixed-nav />
-    <v-main>
+    <v-main style="margin-top: 138px">
       <slot></slot>
     </v-main>
     <app-footer />

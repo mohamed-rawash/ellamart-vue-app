@@ -17,6 +17,14 @@ const routes = [
     },
     component: () => import("@/views/ProductsCategories.vue"),
   },
+  {
+    path: "/products/product_details/:productId",
+    name: "product_details",
+    meta: {
+      title: "ProductDetails",
+    },
+    component: () => import("@/views/ProductDetails"),
+  },
 ];
 
 const router = createRouter({

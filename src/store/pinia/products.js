@@ -39,6 +39,7 @@ export const productsModule = defineStore("productsModule", {
         routeName: "tops",
       },
     ],
+    product: {},
   }),
   actions: {
     async getProducts() {
@@ -65,6 +66,17 @@ export const productsModule = defineStore("productsModule", {
       await axios
         .get(`https://dummyjson.com/products/category/${categoryName}`)
         .then((res) => (this.categoryProducts = res.data.products))
+        .catch((error) => console.log(error));
+    },
+    async getSingleProduct(productId) {
+      this.product = {};
+      await axios
+        .get(`https://dummyjson.com/products/${productId}`)
+        .then((res) => {
+          console.log(res.data);
+          this.product = res.data;
+          console.log(this.product);
+        })
         .catch((error) => console.log(error));
     },
   },

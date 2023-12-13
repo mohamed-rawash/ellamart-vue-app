@@ -2,9 +2,9 @@
   <div class="prdoducts-categories">
     <h2>{{ this.$route.params.title }}</h2>
     <v-container v-if="this.categoryProducts.length === 0">
-      <v-row class="d-felx justify-center">
+      <v-row>
         <v-col
-          class="text-center"
+          class="d-felx justify-center"
           sm="12"
           md="6"
           lg="4"
@@ -63,10 +63,12 @@ export default {
 
 <style lang="scss">
 .prdoducts-categories {
+  padding: 30px 0;
   h2 {
     font-weight: 700;
     font-size: 1.6rem;
     text-align: center;
+    margin-bottom: 30px;
   }
   .product {
     width: fit-content;

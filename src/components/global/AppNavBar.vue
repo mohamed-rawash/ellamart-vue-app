@@ -4,7 +4,12 @@
       <v-container fluid>
         <v-row>
           <v-col cols="3">
-            <img src="@\assets\images\logo.png" alt="app-logo" />
+            <img
+              @click="$router.push({ name: 'home' })"
+              src="@\assets\images\logo.png"
+              alt="app-logo"
+              style="cursor: pointer"
+            />
           </v-col>
           <v-col cols="5">
             <div class="search">

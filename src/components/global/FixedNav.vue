@@ -4,7 +4,7 @@
       <v-container fluid>
         <v-row>
           <v-col cols="2">
-            <span class="logo">
+            <span @click="$router.push({ name: 'home' })" class="logo">
               <img src="@/assets/images/logo.png" alt="app logo" />
             </span>
           </v-col>
@@ -91,6 +91,7 @@ export default {
   .logo {
     display: inline-block;
     width: 80%;
+    cursor: pointer;
     img {
       max-width: 100%;
     }

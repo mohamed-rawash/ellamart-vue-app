@@ -94,6 +94,12 @@
         rounded
         density="combact"
         class="py-2"
+        @click="
+          this.$router.push({
+            name: 'product_details',
+            params: { productId: product.id },
+          })
+        "
         >Choose Options</v-btn
       >
     </v-card>

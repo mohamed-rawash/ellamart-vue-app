@@ -43,3 +43,10 @@
 - Added Footer Successfully ✅
   ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/72d555fe-49eb-4f3d-adae-bfcb0e5fe898)
 
+- Added product details page ✅
+  ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/89fc2b99-1cff-4a1d-9617-8af512a190ae)
+
+  ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/a7b0b88f-d389-405d-939b-6127543c527e)
+
+
+

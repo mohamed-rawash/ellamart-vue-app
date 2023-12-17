@@ -48,5 +48,9 @@
 
   ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/a7b0b88f-d389-405d-939b-6127543c527e)
 
+- Added Products Quick View ✅
+  ![image](https://github.com/mohamed-rawash/ellamart-vue-app/assets/81307786/17faf510-52c0-4d44-b533-47cc8a6eee87)
+
+
 
 

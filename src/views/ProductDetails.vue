@@ -34,7 +34,7 @@
         </v-col>
         <v-col sm="12" md="6" lg="5" class="pt-1 pl-4">
           <v-card v-if="!loading" elevation="0">
-            <v-card-title class="px-0 text-h4 font-weight-bold">
+            <v-card-title class="px-0 text-h4 font-weight-bold text-capitalize">
               {{ product.title }} Sample - {{ product.category }} For Sale
             </v-card-title>
             <div class="rating-parent d-flex align-center">
@@ -95,6 +95,7 @@
                   >mdi-plus</v-icon
                 >
               </div>
+              <p class="brand">Subtotal: {{ quantity * product.price }} $</p>
             </div>
             <div class="add-to-cart py-3 d-flex align-center">
               <v-btn class="text-whit text-capitalize bg-black w-75" rounded
@@ -130,7 +131,7 @@ export default {
   methods: {
     ...mapActions(productsModule, ["getSingleProduct"]),
   },
-  async mounted() {
+  async beforeMount() {
     this.loading = true;
     await this.getSingleProduct(this.$route.params.productId);
     this.loading = false;
@@ -141,6 +142,13 @@ export default {
 <style lang="scss" scoped>
 .product-details {
   padding: 10px 20px;
+  @media (max-width: 960px) {
+    .product-img {
+      width: 100%;
+      height: 500px;
+      border-radius: 10px;
+    }
+  }
   .product-img {
     width: 100%;
     height: 500px;

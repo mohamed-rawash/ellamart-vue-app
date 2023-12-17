@@ -3,7 +3,7 @@
     <span class="sale" v-if="true">Sale</span>
     <v-card elevation="0">
       <v-hover v-slot="{ isHovering, props }">
-        <div class="image-parent">
+        <div class="image-parent position-relative">
           <img
             :src="product.images[0]"
             :alt="product.description"
@@ -11,6 +11,16 @@
             :style="`scale: ${isHovering ? 1.1 : 1}`"
             v-bind="props"
           />
+          <v-btn
+            density="compact"
+            width="100"
+            height="30"
+            variant="outlined"
+            class="quick-view-btn"
+            color="white"
+            @click="openQuickView(product)"
+            >Quick View</v-btn
+          >
         </div>
       </v-hover>
       <v-card-text class="description pl-0 pb-0 pt-0">{{
@@ -108,6 +118,7 @@
 <script>
 export default {
   name: "ProductItem",
+  inject: ["emitter"],
   data: () => ({
     color: "",
   }),
@@ -123,6 +134,11 @@ export default {
       type: Object,
     },
   },
+  methods: {
+    openQuickView(product) {
+      this.emitter.emit("openQuickView", product);
+    },
+  },
 };
 </script>
 
@@ -130,7 +146,7 @@ export default {
 .product-card {
   position: relative;
   overflow: hidden;
-  width: 300px;
+  width: 280px;
   .sale {
     position: absolute;
     left: 0;
@@ -143,11 +159,28 @@ export default {
   .image-parent {
     width: 100%;
     overflow: hidden;
+    position: relative;
     .card-image {
       width: 100%;
       height: 120px;
       transition: 0.5s all ease-in-out;
       cursor: pointer;
+    }
+    .quick-view-btn {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      border-radius: 30px;
+      text-transform: capitalize;
+      opacity: 0;
+      transition: 0.3s all ease-in;
+      z-index: 100;
+    }
+    &:hover {
+      .quick-view-btn {
+        opacity: 100%;
+      }
     }
   }
   .description {

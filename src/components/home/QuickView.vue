@@ -91,6 +91,7 @@
                     <v-btn
                       class="text-whit text-capitalize bg-black w-50"
                       rounded
+                      @click="addItemToCart(product, this.quantity)"
                       >Add To Cart</v-btn
                     >
                     <v-btn icon="mdi-heart-outline"></v-btn>
@@ -125,6 +126,8 @@
 </template>
 
 <script>
+import cartStore from "@/store/pinia/cart";
+import { mapActions } from "pinia";
 export default {
   inject: ["emitter"],
   data: () => ({
@@ -134,6 +137,9 @@ export default {
     quantity: 1,
     product: {},
   }),
+  methods: {
+    ...mapActions(cartStore, ["addItemToCart"]),
+  },
   mounted() {
     this.emitter.on("openQuickView", (data) => {
       this.product = data;

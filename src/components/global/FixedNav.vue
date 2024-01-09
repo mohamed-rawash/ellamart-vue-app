@@ -43,10 +43,11 @@
               <span @click="openCart" class="icon">
                 <v-badge
                   location="right top"
-                  content="2"
+                  :content="cartItems.length"
                   color="red"
                   offset-x="-30"
                   offset-y="-30"
+                  v-if="cartItems.length > 0"
                 ></v-badge>
                 <svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -72,11 +73,13 @@
 </template>
 <script>
 import { productsModule } from "../../store/pinia/products";
+import cartStore from "@/store/pinia/cart";
 import { mapState } from "pinia";
 export default {
   inject: ["emitter"],
   computed: {
     ...mapState(productsModule, ["categories"]),
+    ...mapState(cartStore, ["cartItems"]),
   },
   methods: {
     openCart() {

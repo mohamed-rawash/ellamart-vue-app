@@ -91,9 +91,17 @@
                     <v-btn
                       class="text-whit text-capitalize bg-black w-50"
                       rounded
-                      @click="addItemToCart(product, this.quantity)"
-                      >Add To Cart</v-btn
-                    >
+                      @click="
+                        addItemToCart(product, this.quantity);
+                        handleAddingToCartLoading();
+                      "
+                      ><span v-if="!btnLoading">Add To Cart</span>
+                      <v-progress-circular
+                        indeterminate
+                        color="amber"
+                        v-else
+                      ></v-progress-circular
+                    ></v-btn>
                     <v-btn icon="mdi-heart-outline"></v-btn>
                     <v-btn
                       variant="plain"
@@ -134,11 +142,20 @@ export default {
     dialog: false,
     tab: "",
     loading: false,
+    btnLoading: false,
     quantity: 1,
     product: {},
   }),
   methods: {
     ...mapActions(cartStore, ["addItemToCart"]),
+    handleAddingToCartLoading() {
+      this.btnLoading = true;
+      setTimeout(() => {
+        this.btnLoading = false;
+        this.dialog = false;
+        this.emitter.emit("showMsg", this.product.title);
+      }, 1000);
+    },
   },
   mounted() {
     this.emitter.on("openQuickView", (data) => {

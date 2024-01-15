@@ -12,7 +12,8 @@
 </template>
 <script>
 import QuickView from "@/components/home/QuickView.vue";
-
+import Cart from "@/store/pinia/cart";
+import { mapActions } from "pinia";
 import AppLayout from "@/components/global/AppLayout.vue";
 export default {
   inject: ["emitter"],
@@ -24,11 +25,15 @@ export default {
     snack: false,
     snackMsg: "",
   }),
+  methods: {
+    ...mapActions(Cart, ["getCartItems"]),
+  },
   mounted() {
     this.emitter.on("showMsg", (data) => {
       this.snackMsg = data;
       this.snack = true;
     });
+    this.getCartItems();
   },
 };
 </script>

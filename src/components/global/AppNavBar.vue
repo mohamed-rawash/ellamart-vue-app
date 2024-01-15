@@ -95,6 +95,7 @@
               <div
                 @click="openCart"
                 class="cart d-flex flex-column justify-center align-center"
+                :class="{ 'pointer-none': this.$route.name === 'cart' }"
               >
                 <v-badge
                   location="right top"
@@ -442,6 +443,10 @@ export default {
         width: 20px;
       }
     }
+  }
+  .pointer-none {
+    cursor: not-allowed;
+    pointer-events: none;
   }
 }
 </style>

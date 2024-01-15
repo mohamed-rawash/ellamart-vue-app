@@ -40,7 +40,11 @@
                   ></path>
                 </svg>
               </span>
-              <span @click="openCart" class="icon">
+              <span
+                @click="openCart"
+                class="icon"
+                :class="{ 'pointer-none': this.$route.name === 'cart' }"
+              >
                 <v-badge
                   location="right top"
                   :content="cartItems.length"
@@ -91,6 +95,10 @@ export default {
 </script>
 <style lang="scss" scoped>
 .fixed-nav {
+  .pointer-none {
+    cursor: not-allowed;
+    pointer-events: none;
+  }
   .logo {
     display: inline-block;
     width: 80%;

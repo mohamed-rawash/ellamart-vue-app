@@ -13,7 +13,7 @@ const routes = [
     path: "/products/:category/:title",
     name: "products",
     meta: {
-      title: "Pproducts",
+      title: "Products",
     },
     component: () => import("@/views/ProductsCategories.vue"),
   },
@@ -24,6 +24,14 @@ const routes = [
       title: "ProductDetails",
     },
     component: () => import("@/views/ProductDetails"),
+  },
+  {
+    path: "/cart",
+    name: "cart",
+    meta: {
+      title: "Cart",
+    },
+    component: () => import("@/views/CartView"),
   },
 ];
 

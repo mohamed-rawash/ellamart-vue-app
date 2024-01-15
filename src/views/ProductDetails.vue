@@ -98,9 +98,20 @@
               <p class="brand">Subtotal: {{ quantity * product.price }} $</p>
             </div>
             <div class="add-to-cart py-3 d-flex align-center">
-              <v-btn class="text-whit text-capitalize bg-black w-75" rounded
-                >Add To Cart</v-btn
-              >
+              <v-btn
+                class="text-whit text-capitalize bg-black w-75"
+                rounded
+                @click="
+                  addItemToCart(product, quantity);
+                  handleAddingToCartLoading();
+                "
+                ><span v-if="!btnLoading">Add To Cart</span>
+                <v-progress-circular
+                  indeterminate
+                  color="amber"
+                  v-else
+                ></v-progress-circular
+              ></v-btn>
               <v-btn icon="mdi-heart-outline"></v-btn>
               <v-btn variant="plain" icon="mdi-share-variant-outline"></v-btn>
             </div>
@@ -115,12 +126,15 @@
 <script>
 import { VSkeletonLoader } from "vuetify/lib/labs/components.mjs";
 import { productsModule } from "@/store/pinia/products";
+import cartStore from "@/store/pinia/cart";
 import { mapState, mapActions } from "pinia";
 export default {
+  inject: ["emitter"],
   data: () => ({
     tab: "",
     loading: false,
     quantity: 1,
+    btnLoading: false,
   }),
   components: {
     VSkeletonLoader,
@@ -130,6 +144,14 @@ export default {
   },
   methods: {
     ...mapActions(productsModule, ["getSingleProduct"]),
+    ...mapActions(cartStore, ["addItemToCart"]),
+    handleAddingToCartLoading() {
+      this.btnLoading = true;
+      setTimeout(() => {
+        this.btnLoading = false;
+        this.emitter.emit("showMsg", this.product.title);
+      }, 1000);
+    },
   },
   async beforeMount() {
     this.loading = true;

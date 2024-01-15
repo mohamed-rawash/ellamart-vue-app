@@ -64,6 +64,8 @@ export default {
 <style lang="scss">
 .prdoducts-categories {
   padding: 30px 0;
+  overflow: auto;
+  transform: translateX(-12%);
   h2 {
     font-weight: 700;
     font-size: 1.6rem;

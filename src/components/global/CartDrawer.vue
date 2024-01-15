@@ -4,7 +4,7 @@
       width="370"
       v-model="drawer"
       class="pa-3 drawer"
-      location="right"
+      location="end"
       temporary
     >
       <header class="cart-header">
@@ -42,6 +42,8 @@
             left: calc(${parseInt(
               (getTotalPrice / 8000) * 100 > 100
                 ? 100
+                : (getTotalPrice / 8000) * 100 < 0
+                ? 0
                 : (getTotalPrice / 8000) * 100
             )}% - 25px);`"
           >
@@ -107,6 +109,7 @@
         <v-btn
           v-if="cartItems.length > 0"
           class="text-capitalize mt-2 cart-action-btn"
+          @click="$router.push({ name: 'cart' })"
           >View Cart</v-btn
         >
       </section>
@@ -192,7 +195,10 @@ export default {
         width: fit-content;
         position: absolute;
         bottom: 100%;
+        left: 0;
         color: red;
+        padding: 0 20px;
+        transition: left 0.2s linear;
       }
       & .progress-bar {
         border-radius: 10px;

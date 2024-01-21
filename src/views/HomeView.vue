@@ -4,6 +4,8 @@
     <features-list />
     <top-offers />
     <flash-sale-section :products="flashSale" />
+    <womens-jewellery />
+    <womens-watches />
     <top-categories />
     <new-products :products="laptops" />
     <quality-feature />
@@ -14,6 +16,8 @@
 </template>
 
 <script>
+import WomensJewellery from "../components/home/WomensJewellery";
+import WomensWatches from "../components/home/WomensWatches";
 import WhyShopWithUs from "../components/home/WhyShopWithUs.vue";
 import TopFragrances from "@/components/home/TopFragrances.vue";
 import TopMobilePhones from "@/components/home/TopMobilePhones.vue";
@@ -39,15 +43,23 @@ export default {
     TopMobilePhones,
     TopFragrances,
     WhyShopWithUs,
+    WomensJewellery,
+    WomensWatches,
   },
   computed: {
     ...mapState(productsModule, ["flashSale", "laptops"]),
   },
   methods: {
-    ...mapActions(productsModule, ["getProducts"]),
+    ...mapActions(productsModule, [
+      "getProducts",
+      "getWomensJewelleryProducts",
+      "getWomensWatchesProducts",
+    ]),
   },
   mounted() {
     this.getProducts();
+    this.getWomensWatchesProducts();
+    this.getWomensJewelleryProducts();
   },
 };
 </script>

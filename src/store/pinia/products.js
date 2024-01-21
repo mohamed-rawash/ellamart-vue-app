@@ -8,6 +8,8 @@ export const productsModule = defineStore("productsModule", {
     laptops: [],
     phones: [],
     fragrances: [],
+    womensWatches: [],
+    womensJewellery: [],
     categoryProducts: [],
     categories: [
       {
@@ -57,7 +59,6 @@ export const productsModule = defineStore("productsModule", {
           this.fragrances = this.products.filter(
             (el) => el.category === "fragrances"
           );
-          console.log(this.flashSale);
         })
         .catch((err) => console.log(err));
     },
@@ -66,6 +67,18 @@ export const productsModule = defineStore("productsModule", {
       await axios
         .get(`https://dummyjson.com/products/category/${categoryName}`)
         .then((res) => (this.categoryProducts = res.data.products))
+        .catch((error) => console.log(error));
+    },
+    async getWomensWatchesProducts() {
+      await axios
+        .get(`https://dummyjson.com/products/category/womens-watches`)
+        .then((res) => (this.womensWatches = res.data.products))
+        .catch((error) => console.log(error));
+    },
+    async getWomensJewelleryProducts() {
+      await axios
+        .get(`https://dummyjson.com/products/category/womens-jewellery`)
+        .then((res) => (this.womensJewellery = res.data.products))
         .catch((error) => console.log(error));
     },
     async getSingleProduct(productId) {

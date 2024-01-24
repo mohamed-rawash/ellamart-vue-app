@@ -32,5 +32,8 @@ export default defineStore("cartStore", {
       localStorage.setItem("cartItems", JSON.stringify(this.cartItems));
       console.log(this.cartItems);
     },
+    setToLocalStorage() {
+      localStorage.setItem("cartItems", JSON.stringify(this.cartItems));
+    },
   },
 });

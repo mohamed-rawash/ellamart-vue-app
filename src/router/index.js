@@ -33,6 +33,14 @@ const routes = [
     },
     component: () => import("@/views/CartView"),
   },
+  {
+    path: "/checkout",
+    name: "checkout",
+    meta: {
+      title: "Checkout",
+    },
+    component: () => import("@/views/CheckoutView"),
+  },
 ];
 
 const router = createRouter({

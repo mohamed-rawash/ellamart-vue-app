@@ -103,7 +103,11 @@
         >
           Containue Shipping
         </v-btn>
-        <v-btn v-if="cartItems.length > 0" color="blue" class="checkout"
+        <v-btn
+          v-if="cartItems.length > 0"
+          color="blue"
+          class="checkout"
+          @click="$router.push({ name: 'checkout' })"
           >Checkout</v-btn
         >
         <v-btn

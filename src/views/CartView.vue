@@ -152,6 +152,7 @@
               color="blue"
               elevation="0"
               class="text-capitalize w-100 action-btn btn-blue"
+              @click="toCheckout"
               >Proceed To Checkout</v-btn
             >
             <v-btn
@@ -203,7 +204,11 @@ export default {
     },
   },
   methods: {
-    ...mapActions(cartStore, ["deleteItemFromCart"]),
+    ...mapActions(cartStore, ["deleteItemFromCart", "setToLocalStorage"]),
+    toCheckout() {
+      this.setToLocalStorage();
+      this.$router.push({ name: "checkout" });
+    },
   },
 };
 </script>

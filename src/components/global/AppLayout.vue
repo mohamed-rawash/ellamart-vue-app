@@ -1,12 +1,14 @@
 <template>
   <v-layout class="position-relative">
-    <cart-drawer />
-    <app-nav-bar />
-    <fixed-nav />
-    <v-main style="margin-top: 138px">
+    <cart-drawer v-if="$route.name != 'checkout'" />
+    <app-nav-bar v-if="$route.name != 'checkout'" />
+    <fixed-nav v-if="$route.name != 'checkout'" />
+    <v-main
+      style="`${$route.name != 'checkout'? margin-top: 0:margin-top: 138px}`"
+    >
       <slot></slot>
     </v-main>
-    <app-footer />
+    <app-footer v-if="$route.name != 'checkout'" />
   </v-layout>
 </template>
 <script>
